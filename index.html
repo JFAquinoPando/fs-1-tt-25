@@ -1,11 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto final</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    
+
+<body class="bg-gray-800 text-gray-100">
+    <nav class="bg-red-700/65 backdrop-blur-sm px-6 flex gap-4 justify-center fixed top-0 right-0 w-full">
+        <a class="hover:bg-green-600 transition-all ease-linear block p-3" href="/">Inicio</a>
+        <a class="hover:bg-green-600 transition-all ease-linear block p-3" href="/#historia">Historia</a>
+        <a class="hover:bg-green-600 transition-all ease-linear block p-3" href="/#api">Probar API</a>
+        <a class="hover:bg-green-600 transition-all ease-linear block p-3" href="/#contacto">Contacto</a>
+    </nav>
+    <header class="max-h-[600px] h-screen mt-12"><!-- Implementar banners -->
+        <div class="">
+            <span>
+                Accede a 1000+ Pokémon con una sola llamada.
+            </span>
+        </div>
+    </header>
+    <main class="container mx-auto my-6">
+        <section id="historia">
+            <header class="px-6">
+                <h1 class="text-6xl leading-normal">PokeAPI: La Puerta de Enlace Definitiva a Todo el Mundo Pokémon</h1>
+            </header>
+            <article class="bg-blue-800 p-6">
+                <h2 class="text-4xl text-center my-6"> Pokémon: Un Fenómeno Global que Define Generaciones</h2>
+
+                <p>Desde su debut en 1996, la franquicia Pokémon se ha consolidado no solo como una serie de
+                    videojuegos, sino como un auténtico pilar de la cultura pop global. Lo que comenzó como una simple
+                    aventura para "Atraparlos a todos" se expandió a un vasto universo de más de mil criaturas únicas,
+                    series de televisión, películas, juegos de cartas coleccionables y un sinfín de experiencias
+                    interactivas. Pokémon simboliza la aventura, la amistad y la estrategia, inspirando a millones de
+                    fans y desarrolladores en todo el mundo a crear, coleccionar y competir. Este legado digital y
+                    emocional es la base de todo lo que hacemos, y ahora, toda esa riqueza de datos está al alcance de
+                    tus proyectos.</p>
+            </article>
+        </section>
+        <section id="api">
+            <!-- Buscador -->
+            <header>
+                <h3>Encuentra a Pokémon y haz click sobre él</h3>
+                <form action="https://pokeapi.co/api/v2/pokemon/" method="get">
+                    <input type="text" name="pokemon" placeholder="Ingresa un Nombre o ID (Número)">
+                    <button>Buscar</button>
+                </form>
+            </header>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 bg-green-600/80 p-6">
+                <!-- Cartas de los Pokémon con sonido al hacer click -->
+                <article class="border border-black rounded-xl">
+                    <h1 class="px-4 pt-4">Pikachu</h1>
+                    <figure class="px-4"><img class="mx-auto hover:scale-125 animate-bounce" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu"></figure>
+                    <div class="bg-gray-800 p-4">
+                        <div>
+                            <strong>Peso (KG):</strong> <span>69</span>
+                        </div>
+                        <div>
+                            <strong>Altura (metros):</strong> <span>7</span>
+                        </div>
+                        <div>
+                            <strong>Tipo/s:</strong> <span>Grass</span><span>Poison</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-16 text-center bg-blue-950">
+        Fabricio &copy; 2025
+    </footer>
 </body>
+
 </html>
