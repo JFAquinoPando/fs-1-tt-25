@@ -32,7 +32,7 @@ formulario.addEventListener("submit", async function(evento){
                         </div>
                         <div>
                             <strong>Tipo/s:</strong> ${resultado.types.map(tipo => {
-                                return `<span>${tipo.name}</span>`
+                                return `<span>${tipo.type.name}</span>`
                             }).join(" - ")}
                         </div>
                     </div>
