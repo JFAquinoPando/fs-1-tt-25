@@ -7,6 +7,7 @@
     <title>Proyecto final</title>
     <link rel="stylesheet" href="./css/estilos.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./js/script.js"></script>
 </head>
 
 <body class="bg-gray-800 text-gray-100">
@@ -43,14 +44,14 @@
         </section>
         <section id="api">
             <!-- Buscador -->
-            <header>
-                <h3>Encuentra a Pokémon y haz click sobre él</h3>
-                <form action="https://pokeapi.co/api/v2/pokemon/" method="get">
-                    <input type="text" name="pokemon" placeholder="Ingresa un Nombre o ID (Número)">
-                    <button>Buscar</button>
+            <header class="my-6">
+                <h3 class="text-center text-3xl ">Encuentra a Pokémon y haz click sobre él</h3>
+                <form action="https://pokeapi.co/api/v2/pokemon/" method="get" class="flex">
+                    <input type="text" name="pokemon" class="w-full p-2 text-black" placeholder="Ingresa un Nombre o ID (Número)">
+                    <button class="p-2 bg-red-900">Buscar</button>
                 </form>
             </header>
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 bg-green-600/80 p-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 bg-green-600/80 p-6 gap-6" id="pokedex">
                 <!-- Cartas de los Pokémon con sonido al hacer click -->
                 <article class="border border-black rounded-xl">
                     <h1 class="px-4 pt-4">Pikachu</h1>
