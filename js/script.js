@@ -4,7 +4,7 @@
 
 const $ = (selector) => document.querySelector(selector);
 const formulario = $("form")
-
+const pokedex = $("#pokedex")
 
 formulario.addEventListener("submit", async function(evento){
     evento.preventDefault();
@@ -20,7 +20,7 @@ formulario.addEventListener("submit", async function(evento){
 
     const resultado = await peticion.json()
 
-    const planitilla = `<article class="border border-black rounded-xl">
+    const planitilla = `<article class="border border-black rounded-xl" data-sonido="${resultado.cries.latest}">
                     <h1 class="px-4 pt-4">${resultado.name}</h1>
                     <figure class="px-4"><img class="mx-auto hover:scale-125 animate-bounce" src='${resultado.sprites.front_default}' alt='${resultado.name}'></figure>
                     <div class="bg-gray-800 p-4">
@@ -38,8 +38,21 @@ formulario.addEventListener("submit", async function(evento){
                     </div>
                 </article>`
             
-    $("#pokedex").insertAdjacentHTML("beforeend", planitilla)
-
-    
+    pokedex.insertAdjacentHTML("beforeend", planitilla)
 
 });
+
+
+pokedex.addEventListener("click", function (evento) {
+    const elemento = evento.target.closest("article")
+    if (elemento === null) {
+        return
+    }
+    
+    const grito = elemento.getAttribute("data-sonido")
+    
+    const reproducir = new Audio(grito)
+    reproducir.play()
+    
+    
+})
