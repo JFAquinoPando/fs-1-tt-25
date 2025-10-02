@@ -39,6 +39,11 @@ formulario.addEventListener("submit", async function(evento){
                 </article>`
             
     pokedex.insertAdjacentHTML("beforeend", planitilla)
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+    });
 
 });
 
